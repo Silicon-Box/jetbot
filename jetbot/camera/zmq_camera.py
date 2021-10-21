@@ -16,15 +16,15 @@ def recv_image(socket, dtype, shape):
     
 class ZmqCamera(CameraBase):
     
-    value = traitlets.Any(value=np.zeros((224, 224, 3), dtype=np.uint8), default_value=np.zeros((224, 224, 3), dtype=np.uint8))
+    value = traitlets.Any(value=np.zeros((3280, 2464, 3), dtype=np.uint8), default_value=np.zeros((3280, 2464, 3), dtype=np.uint8))
     
     def __init__(self, *args, **kwargs):
-        self.value = np.zeros((224, 224, 3), dtype=np.uint8)  # set default image
+        self.value = np.zeros((3280, 2464, 3), dtype=np.uint8)  # set default image
         super().__init__(self, *args, **kwargs)
         
         self._running = False
         self._port = 1807
-        self._image_shape = (224, 224, 3)
+        self._image_shape = (3280, 2464, 3)
         self._image_dtype = np.uint8
         self.start()
         atexit.register(self.stop)

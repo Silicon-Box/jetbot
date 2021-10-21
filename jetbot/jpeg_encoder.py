@@ -13,7 +13,7 @@ Gst.init(None)
 
 class JpegEncoder(object):
     
-    def __init__(self, width=224, height=224, fps=21):
+    def __init__(self, width=3280, height=2464, fps=21):
         
         
         CAPS = "video/x-raw,format=BGR,width={width},height={height},framerate={fps}/1".format(

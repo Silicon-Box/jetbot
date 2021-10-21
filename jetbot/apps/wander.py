@@ -59,7 +59,7 @@ class WanderApplication(traitlets.HasTraits):
         
         print('Initializing camera...')
         # create camera
-        self.camera = Camera.instance(width=224, height=224)
+        self.camera = Camera.instance(width=3280, height=2464)
         
         print('Running...')
         self.camera.observe(self._update, names='value')

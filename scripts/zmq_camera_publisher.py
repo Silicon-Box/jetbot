@@ -10,13 +10,15 @@ import atexit
 import numpy as np
 from gi.repository import GObject, Gst
 
+# Sensor: Sony IMX219
+# Resolution: 3280 × 2464
 
 Gst.init(None)
 
 
 class GstCamera(object):
     
-    def __init__(self, sensor_mode=0, width=224, height=224, fps=21, capture_width=816, capture_height=616):
+    def __init__(self, sensor_mode=0, width=3280, height=2464, fps=21, capture_width=3280, capture_height=2464):
         
         self.mainloop = GObject.MainLoop()
         
@@ -103,11 +105,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--port', type=int, default=1807)
     parser.add_argument('--sensor_mode', type=int, default=0)
-    parser.add_argument('--width', type=int, default=224)
-    parser.add_argument('--height', type=int, default=224)
+    parser.add_argument('--width', type=int, default=3280)
+    parser.add_argument('--height', type=int, default=2464)
     parser.add_argument('--fps', type=int, default=21)
-    parser.add_argument('--capture_width', type=int, default=816)
-    parser.add_argument('--capture_height', type=int, default=616)
+    parser.add_argument('--capture_width', type=int, default=3280)
+    parser.add_argument('--capture_height', type=int, default=2464)
     args = parser.parse_args()
     
         

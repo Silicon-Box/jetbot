@@ -8,6 +8,14 @@ ENV DEBIAN_FRONTEND=noninteractive
 # ====================
 RUN apt-get update && apt-get install -y net-tools vim cmake
 
+# ==================
+# INSTALL BLINKA
+# ==================
+RUN pip3 install adafruit-blinka
+
+# PWM Board
+RUN pip3 install adafruit-circuitpython-pca9685
+RUN pip3 install adafruit-circuitpython-servokit
 
 # ==================
 # INSTALL TENSORFLOW

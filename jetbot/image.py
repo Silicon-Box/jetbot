@@ -3,7 +3,7 @@ import cv2
 from .jpeg_encoder import JpegEncoder
 
 
-_ENCODER = JpegEncoder(width=224, height=224, fps=21)
+_ENCODER = JpegEncoder(width=3280, height=2464, fps=21)
 
 
 def bgr8_to_jpeg_gst(value):
